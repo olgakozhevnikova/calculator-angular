@@ -30,14 +30,22 @@ export class CalcComponent implements OnInit {
         this.value = item;
       }
     } else {
+      const lastChar = this.value[this.value.length - 1];
+      const ind = _.findIndex(this.operators, function(x) { return x === lastChar; });
       // do calculation when press '='
       if (item === '=') {
-        const lastChar = this.value[this.value.length - 1];
-        const ind = _.findIndex(this.operators, function(x) { return x === lastChar; });
         if (ind >= 0 || lastChar === '.') {
           return;
         }
         this.value = eval(this.value);
+      }
+      // if last symbol of input is operator, do not do anything
+      else if (this.operators.indexOf(item) !== -1 || item === '.') {
+        if (ind >= 0 || lastChar === '.') {
+          return;
+        } else {
+          this.value += item;
+        }
       } else {
         this.value += item;
       }
