@@ -1,5 +1,16 @@
-<div class="container">
+<div class="calc-container">
+  <input type="text" placeholder="0" [(ngModel)]="value">
+  <button (click)="refresh()">C</button>
   <div class="calc-wrapper">
-    
+    <div class="numbers-wrapper">
+      <div class="calc-btn number" *ngFor="let number of numbers">
+        <span (click)="click(number)">{{number}}</span>
+      </div>
+    </div>
+    <div class="operators-wrapper">
+      <div class="calc-btn operator" *ngFor="let oper of operators">
+        <span (click)="click(oper)">{{oper}}</span>
+      </div>
+    </div>
   </div>
 </div>
