@@ -24,7 +24,7 @@ export class CalcComponent implements OnInit {
     if (!this.value) {
       // if input is empty, do not use operators
       const ind = _.findIndex(this.operators, function(x) { return x === item; });
-      if (ind >= 0 || item === '.') {
+      if (ind >= 0 || item === '.' || item === '=') {
         return;
       } else {
         this.value = item;
