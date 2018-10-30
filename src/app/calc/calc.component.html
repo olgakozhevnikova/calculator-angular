@@ -1,6 +1,8 @@
 <div class="calc-container">
-  <input type="text" placeholder="0" [(ngModel)]="value">
-  <button (click)="refresh()">C</button>
+  <div class="input-wrapper">
+    <input type="text" placeholder="0" [(ngModel)]="value" disabled>
+    <button (click)="refresh()" class="clear-btn">C</button>
+  </div>
   <div class="calc-wrapper">
     <div class="numbers-wrapper">
       <div class="calc-btn number" *ngFor="let number of numbers">

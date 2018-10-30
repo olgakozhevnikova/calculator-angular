@@ -1,6 +1,19 @@
 .calc-container {
   width: 50%;
+  max-width: 450px;
   margin: 5rem auto;
+}
+
+.input-wrapper {
+  margin: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clear-btn {
+  cursor: pointer;
+  width: 5rem;
+  height: 3rem;
 }
 
 .calc-wrapper {
@@ -22,8 +35,8 @@
 }
 
 .number {
-  width: 33%;
-  height: 10vw;
+  width: 30%;
+  height: 8vw;
 }
 
 .operator {
@@ -45,3 +58,4 @@ span {
   cursor: pointer;
   border: 1px solid black;
 }
+
